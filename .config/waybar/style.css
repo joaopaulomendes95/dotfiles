@@ -1,8 +1,9 @@
 * {
-  border: 4px;
+  border: 0;
   border-radius: 0;
   font-family: "JetBrainsMono Nerd Font", monospace;
   font-size: 12px;
+  box-shadow: none;
 }
 
 #waybar {
