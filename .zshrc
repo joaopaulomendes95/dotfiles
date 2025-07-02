@@ -27,9 +27,8 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 
 # basic dev path envs
-export PERSONAL=$XDG_CONFIG_HOME/personal
-export DEV_ENV=$XDG_CONFIG_HOME/dev
-export DEV_ENV_HOME=$HOME/personal/dev
+export PERSONAL=$HOME/personal
+export DEV_ENV=$PERSONAL/dev
 
 # export paths
 export PATH=$PATH:$HOME/.local/bin
