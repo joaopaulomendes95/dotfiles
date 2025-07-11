@@ -6,4 +6,4 @@ if pgrep -x "waybar" >/dev/null; then
     pkill -x "waybar"
 fi
 # Start waybar
-waybar &
+nohup waybar >/dev/null 2>&1 &
