@@ -3,6 +3,7 @@
 WALLPAPER_DIR="${1:-$HOME/Pictures/Wallpapers}"
 CONFIG_FILE="$HOME/dotfiles/.config/hypr/hyprpaper.conf"
 
+# Pick a random wallpaper
 WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -iname '*.jpg' -o -iname '*.png' -o -iname '*.jpeg' \) | shuf -n 1)
 
 if [ -z "$WALLPAPER" ]; then
@@ -10,11 +11,15 @@ if [ -z "$WALLPAPER" ]; then
     exit 1
 fi
 
-sed -i '/^wallpaper=/d' "$CONFIG_FILE"
-sed -i '/^preload=/d' "$CONFIG_FILE"
-echo "preload = $WALLPAPER" >> "$CONFIG_FILE"
-echo "wallpaper = $MONITOR_NAME,$WALLPAPER" >> "$CONFIG_FILE"
+# Overwrite config with just what's needed
+cat > "$CONFIG_FILE" <<EOF
+preload = $WALLPAPER
+wallpaper = ,$WALLPAPER
+splash = false
+ipc = off
+EOF
 
+# Restart hyprpaper
 pkill hyprpaper
 nohup hyprpaper >/dev/null 2>&1 &
 
