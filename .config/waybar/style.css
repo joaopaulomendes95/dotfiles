@@ -4,6 +4,8 @@
   font-family: "JetBrainsMono Nerd Font", monospace;
   font-size: 12px;
   box-shadow: none;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 #waybar {

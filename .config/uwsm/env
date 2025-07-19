@@ -15,6 +15,7 @@ export XDG_MENU_PREFIX=arch-
 # try this if no work
 # export XDG_MENU_PREFIX=arch- kbuildsycoca6
 
+
 # basic dev path envs
 export PERSONAL=$HOME/personal
 export DEV_ENV=$PERSONAL/dev
