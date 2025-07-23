@@ -64,7 +64,7 @@
     "cpu": {
         "format": " {usage}% ",
     	"tooltip": false,
-            "on-click": "foot -e btop"
+        "on-click": "foot -e btop"
     },
 
     "temperature": {
