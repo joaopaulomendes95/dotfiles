@@ -7,7 +7,6 @@
       "pulseaudio",
       "backlight",
       "battery",
-      // "network",
       "disk",
       "cpu",
       "temperature",
@@ -27,7 +26,7 @@
     },
 
     "pulseaudio": {
-      "format": "{icon}{volume}%",
+      "format": "{icon} {volume}%",
       "format-muted": "",
       "format-icons": {
           "default": ["", "", ""]
@@ -37,43 +36,35 @@
     },
 
     "backlight": {
-      "format": "{percent}%",
+      "format": " {percent}%",
     	"tooltip": false
     },
 
     "battery": {
-      "format": "{capacity}%",
-    	"tooltip": false
-    },
-
-    "network": {
-      "format-wifi": "",
-      "format-ethernet": "󰈀",
-      "format-disconnected": "󰤠",
-      "interval": 5,
+      "format": " {capacity}%",
     	"tooltip": false
     },
 
     "disk": {
-      "format": "{percentage_used}%",
+      "format": " {percentage_used}%",
       "path": "/",
       "interval": 30,
       "tooltip": false
     },
 
     "cpu": {
-      "format": "{usage}%",
+      "format": " {usage}%",
     	"tooltip": false,
       "on-click": "foot -e btop"
     },
 
     "temperature": {
-      "format": "{temperatureC}°C",
+      "format": " {temperatureC}°C",
     	"tooltip": false
     },
 
     "memory": {
-      "format": "{used}G",
+      "format": " {used}G",
     	"tooltip": false
     },
 
@@ -83,7 +74,7 @@
 
     "custom/lock": {
       "tooltip": false,
-      "on-click": "sh -c '(sleep 0.5s; wlogout)' & disown",
+      "on-click": "sh -c '(sleep 0.5s; wlogout -b 4 -c 2 -m 640)' & disown",
       "format": ""
     }
 }
