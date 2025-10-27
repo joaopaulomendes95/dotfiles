@@ -20,7 +20,7 @@ source $ZSH/oh-my-zsh.sh
 # tmux-sessionizer ctrl+f
 bindkey -s ^f "tmux-sessionizer\n"
 
-# Starting Wayland
+# Starting Wayland from tty
 if uwsm check may-start; then
 	exec uwsm start hyprland.desktop
 fi

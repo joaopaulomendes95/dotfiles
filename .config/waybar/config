@@ -75,6 +75,6 @@
     "custom/lock": {
       "tooltip": false,
       "on-click": "sh -c '(sleep 0.5s; wlogout -b 4 -c 2 -m 640)' & disown",
-      "format": ""
+      "format": " "
     }
 }
