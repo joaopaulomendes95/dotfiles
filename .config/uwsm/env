@@ -5,15 +5,13 @@ export HYPRCURSOR_SIZE=24
 # basic programs envs
 export EDITOR="nvim"
 export TERMINAL="foot"
-export BROWSER="brave"
+export BROWSER="zen-browser"
 
 # basic path envs
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_MENU_PREFIX=arch-
-# try this if no work
-# export XDG_MENU_PREFIX=arch- kbuildsycoca6
 
 
 # basic dev path envs

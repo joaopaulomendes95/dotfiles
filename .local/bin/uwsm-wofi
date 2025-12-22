@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# If wofi is running, don't spawn another
+if pgrep -x wofi >/dev/null; then
+  exit 0
+fi
+
+selection="$(
+  wofi --show drun --define=drun-print_desktop_file=true |
+  sed -E 's/(\.desktop) /\1:/'
+)"
+
+[ -n "$selection" ] && uwsm-app -- "$selection"
+

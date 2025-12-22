@@ -1,83 +1,116 @@
 {
-    "position": "top",
-    "spacing": 0,
-    "height": 0,
-    "reload_style_on_change": true,
-    "layer": "top",
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["clock"],
-    "modules-right": [
-      "pulseaudio",
-      "backlight",
-      "battery",
-      "disk",
-      "cpu",
-      "temperature",
-      "memory",
-      "tray",
-      "custom/lock"
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "pulseaudio",
+    "backlight",
+    "battery",
+    "disk",
+    "memory",
+    "cpu",
+    "temperature",
+    "tray",
+    "custom/lock"
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "tooltip": false,
+  },
+
+  "clock": {
+    "format": "{:%I:%M}",
+    "format-alt": "{:%Y-%m-%d}",
+    "tooltip": false
+  },
+
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+        "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol",
+    "tooltip": false
+  },
+
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
     ],
+    "tooltip": false
+  },
 
-    "hyprland/workspaces": {
-      "format": "{name}",
+  "battery": {
+    "interval": 1,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
     },
+    "tooltip": true,
+    "format": "{capacity}% {icon}",
+    "format-time": "{H}h {M}min",
+    "tooltip": "{time}",
+    "format-charging": "{capacity}% {icon}",
+    "format-plugged": "{capacity}% 󰠠",
+    "format-icons": [
+      "󰪞",
+      "󰪟",
+      "󰪠",
+      "󰪡",
+      "󰪢",
+      "󰪣",
+      "󰪤",
+      "󰪥"
+    ],
+  },
 
-    "clock": {
-      "format": "{:%I:%M}",
-      "format-alt": "{:%Y-%m-%d}",
-    	"tooltip": false
-    },
+  "disk": {
+    "format": " {percentage_used}%",
+    "path": "/",
+    "interval": 30,
+    "tooltip": false
+  },
 
-    "pulseaudio": {
-      "format": "{icon} {volume}%",
-      "format-muted": "",
-      "format-icons": {
-          "default": ["", "", ""]
-      },
-      "on-click": "pavucontrol",
-    	"tooltip": false
-    },
+  "memory": {
+    "format": " {used}G",
+    "tooltip": false
+  },
 
-    "backlight": {
-      "format": " {percent}%",
-    	"tooltip": false
-    },
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": false,
+    "on-click": "foot -e btop"
+  },
 
-    "battery": {
-      "format": " {capacity}%",
-    	"tooltip": false
-    },
+  "temperature": {
+    "format": " {temperatureC}°C ",
+    "format-critical": " {temperatureC}°C ",
+    "interval": 1,
+    "critical-threshold": 80,
+    "tooltip": false
+  },
 
-    "disk": {
-      "format": " {percentage_used}%",
-      "path": "/",
-      "interval": 30,
-      "tooltip": false
-    },
+  "tray": {
+    "spacing": 10
+  },
 
-    "cpu": {
-      "format": " {usage}%",
-    	"tooltip": false,
-      "on-click": "foot -e btop"
-    },
-
-    "temperature": {
-      "format": " {temperatureC}°C",
-    	"tooltip": false
-    },
-
-    "memory": {
-      "format": " {used}G",
-    	"tooltip": false
-    },
-
-    "tray": {
-      "spacing": 10
-    },
-
-    "custom/lock": {
-      "tooltip": false,
-      "on-click": "sh -c '(sleep 0.5s; wlogout -b 4 -c 2 -m 640)' & disown",
-      "format": " "
-    }
+  "custom/lock": {
+    "tooltip": false,
+    "on-click": "sh -c '(sleep 0.5s; wlogout -b 4 -c 2 -m 640)' & disown",
+    "format": " "
+  }
 }
